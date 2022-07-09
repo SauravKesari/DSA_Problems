@@ -4,7 +4,7 @@ public class Count_Zeros_XOR_Pairs {
     public static void main(String[] args) {
         int[]arr={1,1,1};
         System.out.println(CountPairs(arr,arr.length));
-        System.out.println(isPowerOfTwo(62));
+        System.out.println(isPowerOfTwo(3));
     }
     static int CountPairs(int[]arr,int n){
         int count=0;
