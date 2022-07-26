@@ -1,5 +1,5 @@
 package com.company;
-
+import Mypackage.*;
 public class BitManipulation {
     public static void main(String[] args) {
         int a=5;
@@ -35,6 +35,9 @@ public class BitManipulation {
         sb.insert(2,"geeks");
 
         System.out.println(sb);
+
+        Emplaoyee e=new Emplaoyee(1,"Jigar",8560);
+        e.printEmployee();
 
 
 

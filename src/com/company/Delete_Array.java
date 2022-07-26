@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Delete_Array {
     public static void main(String[] args) {
-        int[]nums={4,8,14,15,12};
+        int[]nums={4,8,14,15,18};
 //        System.out.println(findElement(nums, nums.length, 12));
 //        int l=deleteElement(nums, nums.length, 1);
 //        for (int i = 0; i <l ; i++) {
@@ -12,6 +12,11 @@ public class Delete_Array {
 //        }
 
         System.out.println(binarySearch(nums,0, nums.length-1, 15));
+        int n=insertSorted(nums, 3,13, nums.length);
+        for (int i = 0; i < n; i++) {
+            System.out.print(nums[i]+"\t");
+        }
+        System.out.println(Arrays.toString(nums));
     }
     static int findElement(int[]arr,int n,int key){
         for (int i = 0; i < arr.length ; i++) {
@@ -33,6 +38,7 @@ public class Delete_Array {
         return n-1;
 
     }
+    //Searching in sorted array
     static int binarySearch(int[]arr,int start,int end,int key){
         while(start<end){
             int mid=start+(end-start)/2;
@@ -44,5 +50,17 @@ public class Delete_Array {
                 start=mid+1;
         }
         return binarySearch(arr,start,end,key);
+    }
+    //insertion in sorted array
+    static int insertSorted(int[]arr,int n,int key,int capacity){
+        if(n>=capacity)
+            return n;
+        int i;
+        for ( i = n-1; (i >= 0 && arr[i]>key); i--) {
+            arr[i+1]=arr[i];
+        }
+        arr[i+1]=key;
+
+        return (capacity+1);
     }
 }
